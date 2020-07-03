@@ -1,25 +1,10 @@
 class User {
-  User({
-    this.name,
-    this.address,
-    this.about,
-  });
-
-  String name;
-  String address;
-  String about;
+  String name, address, about;
+  User({this.name, this.address, this.about});
 }
 
-class Profile {
-  Profile({
-    this.user,
-    this.followers,
-    this.following,
-    this.friends,
-  });
-
+class Profile{
   User user;
-  int followers;
-  int following;
-  int friends;
+  int followers, following, friends;
+  Profile({this.user, this.followers, this.following, this.friends});
 }
