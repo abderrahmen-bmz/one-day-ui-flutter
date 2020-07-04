@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:one_day_ui/profiles_ui/day_one/profile_one.dart';
+import 'package:one_day_ui/profiles_ui/day_one/profile_page_one.dart';
+import 'package:one_day_ui/profiles_ui/day_two/profile_page_two.dart';
 
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
    
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: ProfilePage()
+      home: ProfilePageTwo()
     );
   }
 }

@@ -5,7 +5,7 @@ class ProfilePainter extends CustomPainter {
     Paint paint = Paint();
     Path path = Path();
     paint.color = Colors.white;
-    path.lineTo(0, size.height * 0.3);
+    path.lineTo(0, size.height * 0.33);
     path.lineTo(size.width, size.height * 0.37);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);

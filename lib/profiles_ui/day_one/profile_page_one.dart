@@ -3,17 +3,17 @@ import 'package:one_day_ui/profiles_ui/day_one/provider.dart';
 import 'package:one_day_ui/profiles_ui/day_one/user.dart';
 import 'package:one_day_ui/profiles_ui/day_one/profile_painter.dart';
 import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/custom_button_bar.dart';
-//import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/app_bar.dart';
+import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/app_bar.dart';
 import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/avatar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
-class ProfilePage extends StatefulWidget {
+class ProfilePageOne extends StatefulWidget {
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _ProfilePageOneState createState() => _ProfilePageOneState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePageOneState extends State<ProfilePageOne> {
   Profile profile = ProfileProvider.getProfile();
   static Color _textColor = Color(0xFF4e4e4e);
 
@@ -34,56 +34,28 @@ class _ProfilePageState extends State<ProfilePage> {
     return Stack(
       children: <Widget>[
         Image.asset(
-          'general-assets/bg.jpg',
+          'general-assets/background1.jpg',
           fit: BoxFit.cover,
           height: MediaQuery.of(context).size.height * 0.45,
           width: MediaQuery.of(context).size.width,
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            title: Text(
-              'PROFILE',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.1,
-              ),
-            ),
-            centerTitle: true,
-            leading: IconButton(
-              onPressed: () {},
-              icon: Icon(FontAwesomeIcons.bars),
-            ),
-            actions: <Widget>[
-              IconButton(
-                onPressed: () {},
-                icon: Icon(FontAwesomeIcons.cog),
-              ),
-            ],
-          ),
+          appBar: CustomAppBar(textTitle: 'PROFILE',),
           body: Stack(
             children: <Widget>[
               CustomPaint(
                 painter: ProfilePainter(),
                 child: Container(),
               ),
-              AnimatedPositioned(
-                duration: Duration(milliseconds: 200),
-                left: MediaQuery.of(context).size.width * 0.05,
-                top: _visibile
-                    ? MediaQuery.of(context).size.height * 0.23
-                    : MediaQuery.of(context).size.height * 0.21,
-                child: AnimatedOpacity(
-                  duration: Duration(milliseconds: 200),
-                  opacity: _visibile ? 1 : 0,
-                  child: Avatar(
-                    minRadius: 35.0,
-                    photoPath:"general-assets/pic.jpg",
+              Positioned(
+                  left: MediaQuery.of(context).size.width * 0.05,
+                  top: MediaQuery.of(context).size.height * 0.22,
+                  child: CircleAvatar(
+                    minRadius: 40,
+                    backgroundImage: ExactAssetImage('general-assets/pic.jpg'),
                   ),
                 ),
-              ),
               _bodyText(context),
               _bottomBar(context),
             ],
