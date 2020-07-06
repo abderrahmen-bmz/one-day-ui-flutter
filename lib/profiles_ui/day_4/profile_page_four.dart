@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/app_bar.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/app_bar.dart';
 
 class ProfilePageFour extends StatefulWidget {
   @override

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/app_bar.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/custom_button_bar.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/app_bar.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/custom_button_bar.dart';
+import 'package:one_day_ui/profiles_ui/models/provider.dart';
+import 'package:one_day_ui/profiles_ui/models/user.dart';
 
 class ProfilePageFive extends StatefulWidget {
   @override
@@ -8,6 +10,7 @@ class ProfilePageFive extends StatefulWidget {
 }
 
 class _ProfilePageFiveState extends State<ProfilePageFive> {
+  Profile profile = ProfileProvider.getProfile();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -37,10 +40,11 @@ class _ProfilePageFiveState extends State<ProfilePageFive> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    _buildTop(context),
-                    _buildName(),
+                    _buildProfile(context),
+                    _buildBio(),
                     _buildContent(context),
-                    _buttomBar(context),
+                    _buildDivider(context),
+                    _buildCounters(context),
                   ],
                 ),
               ),
@@ -51,7 +55,7 @@ class _ProfilePageFiveState extends State<ProfilePageFive> {
     );
   }
 
-  Widget _buildTop(context) {
+  Widget _buildProfile(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -65,59 +69,63 @@ class _ProfilePageFiveState extends State<ProfilePageFive> {
                 fit: BoxFit.cover),
           ),
         ),
-        Row(
-          children: <Widget>[
-            MaterialButton(
-              onPressed: () {},
-              color: Colors.white,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0),
-                child: Text(
-                  'ADD FRIEND',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 10,
-                  ),
-                ),
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(25)),
+        Spacer(
+          flex: 2,
+        ),
+        MaterialButton(
+          onPressed: () {},
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0),
+            child: Text(
+              'ADD FRIEND',
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 10,
               ),
             ),
-            SizedBox(
-              width: 8.0,
-            ),
-            MaterialButton(
-              onPressed: () {},
-              color: Colors.black,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0),
-                child: Text(
-                  'FOLLOW',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                  ),
-                ),
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(25)),
+          ),
+        ),
+        Spacer(
+          flex: 1,
+        ),
+        MaterialButton(
+          onPressed: () {},
+          color: Colors.black,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0),
+            child: Text(
+              'FOLLOW',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 10,
               ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(25)),
-              ),
             ),
-          ],
-        )
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(25)),
+          ),
+        ),
       ],
     );
   }
 
-  Widget _buildName() {
+  Widget _buildDivider(BuildContext context) {
+    return Container(
+      height: 1,
+      color: Colors.grey.shade200,
+    );
+  }
+
+  Widget _buildBio() {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Abdo Bmz',
+          profile.user.name,
           style: TextStyle(
             color: Colors.black,
             fontSize: 28,
@@ -127,9 +135,7 @@ class _ProfilePageFiveState extends State<ProfilePageFive> {
         Text(
           'Software Enginner',
           style: TextStyle(
-            color: Colors.grey,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
+            color: Colors.grey.shade400,
           ),
         ),
       ],
@@ -138,27 +144,36 @@ class _ProfilePageFiveState extends State<ProfilePageFive> {
 
   Widget _buildContent(contenxt) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
+      padding: const EdgeInsets.only(top: 8.0, bottom: 12.0),
       child: Text(
-        'Software Enginner Enginner Software Enginner',
+        profile.user.about,
         style: TextStyle(
-          color: Colors.grey,
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
+            color: Colors.grey,
+            fontSize: 13,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 1.05),
       ),
     );
   }
 
-  Widget _buttomBar(context) {
+  Widget _buildCounters(context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.only(top: 4.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          CustomBottomBar(bottomTitle: 'FOLLOWS', bottomCounter: '175'),
-          CustomBottomBar(bottomTitle: 'FOLLOWS', bottomCounter: '175'),
-          CustomBottomBar(bottomTitle: 'FOLLOWS', bottomCounter: '175'),
+          CustomBottomBar(
+            bottomTitle: 'FOLLOWERS',
+            bottomCounter: profile.followers.toString(),
+          ),
+          CustomBottomBar(
+            bottomTitle: 'FOLLOWING',
+            bottomCounter: profile.following.toString(),
+          ),
+          CustomBottomBar(
+            bottomTitle: 'FRIENDS',
+            bottomCounter: profile.friends.toString(),
+          ),
         ],
       ),
     );

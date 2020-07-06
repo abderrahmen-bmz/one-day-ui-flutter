@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:one_day_ui/profiles_ui/day_one/provider.dart';
-import 'package:one_day_ui/profiles_ui/day_one/user.dart';
-import 'package:one_day_ui/profiles_ui/day_one/profile_painter.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/custom_button_bar.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/app_bar.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/avatar.dart';
+import 'package:one_day_ui/profiles_ui/models/provider.dart';
+import 'package:one_day_ui/profiles_ui/models/user.dart';
+import 'package:one_day_ui/profiles_ui/day_1/profile_painter.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/custom_button_bar.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/app_bar.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/avatar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 
 class ProfilePageOne extends StatefulWidget {
   @override
@@ -41,7 +40,9 @@ class _ProfilePageOneState extends State<ProfilePageOne> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: CustomAppBar(textTitle: 'PROFILE',),
+          appBar: CustomAppBar(
+            textTitle: 'PROFILE',
+          ),
           body: Stack(
             children: <Widget>[
               CustomPaint(
@@ -49,13 +50,13 @@ class _ProfilePageOneState extends State<ProfilePageOne> {
                 child: Container(),
               ),
               Positioned(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.22,
-                  child: CircleAvatar(
-                    minRadius: 40,
-                    backgroundImage: ExactAssetImage('general-assets/pic.jpg'),
-                  ),
+                left: MediaQuery.of(context).size.width * 0.05,
+                top: MediaQuery.of(context).size.height * 0.22,
+                child: CircleAvatar(
+                  minRadius: 40,
+                  backgroundImage: ExactAssetImage('general-assets/pic.jpg'),
                 ),
+              ),
               _bodyText(context),
               _bottomBar(context),
             ],
@@ -64,8 +65,6 @@ class _ProfilePageOneState extends State<ProfilePageOne> {
       ],
     );
   }
-
-
 
   Widget _bottomBar(BuildContext context) {
     return Positioned(
@@ -151,8 +150,4 @@ class _ProfilePageOneState extends State<ProfilePageOne> {
       ),
     );
   }
-
-     
-
-  
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/app_bar.dart';
-import 'package:one_day_ui/profiles_ui/day_one/provider.dart';
-import 'package:one_day_ui/profiles_ui/day_one/user.dart';
-import 'package:one_day_ui/profiles_ui/day_one/commun_widgets/custom_button_bar.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/app_bar.dart';
+import 'package:one_day_ui/profiles_ui/models/provider.dart';
+import 'package:one_day_ui/profiles_ui/models/user.dart';
+import 'package:one_day_ui/profiles_ui/commun_widgets/custom_button_bar.dart';
 
 class ProfilePageThree extends StatefulWidget {
   @override
