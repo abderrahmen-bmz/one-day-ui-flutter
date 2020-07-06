@@ -114,7 +114,8 @@ class _ProfilePageFourState extends State<ProfilePageFour> {
           ),
         ),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(25))),
+          borderRadius: BorderRadius.all(Radius.circular(25)),
+        ),
       ),
     );
   }
