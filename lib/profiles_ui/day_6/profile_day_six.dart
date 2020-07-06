@@ -135,8 +135,8 @@ class _ProfilePageSixState extends State<ProfilePageSix> {
         scrollDirection: Axis.horizontal,
         children: List.generate(10, (index) {
           return Container(
-            height: 75,
-            width: 75,
+            height: 100,
+            width: 100,
             margin: EdgeInsets.only(right: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),

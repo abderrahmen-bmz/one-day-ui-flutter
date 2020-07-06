@@ -21,9 +21,9 @@ class _ProfilePageTwoState extends State<ProfilePageTwo> {
     return Stack(
       children: <Widget>[
         Image.asset(
-          'general-assets/bg.jpg',
+          'general-assets/background/bg12.jpg',
           fit: BoxFit.cover,
-          height: MediaQuery.of(context).size.height * 0.40,
+          height: MediaQuery.of(context).size.height * 0.65,
           width: MediaQuery.of(context).size.width,
         ),
         Scaffold(
@@ -99,7 +99,7 @@ class _ProfilePageTwoState extends State<ProfilePageTwo> {
           Text(
             '666 Followrs',
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black54,
               fontSize: 16,
             ),
           ),
@@ -121,7 +121,14 @@ class _ProfilePageTwoState extends State<ProfilePageTwo> {
           children: <Widget>[
             _counters(context),
             _divider(context),
+            SizedBox(
+              height: 10,
+            ),
             ..._about(),
+            SizedBox(
+              height: 10,
+            ),
+            _divider(context),
             SizedBox(
               height: 8,
             ),
@@ -174,6 +181,7 @@ class _ProfilePageTwoState extends State<ProfilePageTwo> {
           'ABOUT ME',
           style: TextStyle(
             color: _textColor,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
             letterSpacing: 1.1,
           ),
@@ -185,7 +193,7 @@ class _ProfilePageTwoState extends State<ProfilePageTwo> {
           profile.user.about,
           style: TextStyle(
             color: _textColor,
-            fontSize: 18,
+            fontSize: 15,
             height: 1.4,
             letterSpacing: 1.2,
           ),
@@ -195,12 +203,15 @@ class _ProfilePageTwoState extends State<ProfilePageTwo> {
   }
 
   Widget _friends() {
-    return Text(
-      "FRIENDS (${profile.friends.toString()})",
-      style: TextStyle(
-        color: _textColor,
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.only(left: 14.0),
+      child: Text(
+        "FRIENDS (${profile.friends.toString()})",
+        style: TextStyle(
+          color: _textColor,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

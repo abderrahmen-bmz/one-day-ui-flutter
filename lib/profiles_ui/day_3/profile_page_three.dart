@@ -17,7 +17,7 @@ class _ProfilePageThreeState extends State<ProfilePageThree> {
     return Stack(
       children: <Widget>[
         Image.asset(
-          'general-assets/bg2.jpg',
+          'general-assets/bg11.jpg',
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
         ),
