@@ -229,7 +229,7 @@ class _ProfilePageTwoState extends State<ProfilePageTwo> {
             margin: EdgeInsets.only(right: 24),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: ExactAssetImage('general-assets/pic.jpg'),
+                image: ExactAssetImage('general-assets/pic2.jpg'),
                 fit: BoxFit.cover,
               ),
               shape: BoxShape.circle,

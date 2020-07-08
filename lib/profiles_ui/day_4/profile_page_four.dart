@@ -14,14 +14,14 @@ class _ProfilePageFourState extends State<ProfilePageFour> {
     return Stack(
       children: <Widget>[
         Image.asset(
-          'general-assets/profile_4_background.jpg',
+          'general-assets/bg20.jpg',
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: CustomAppBar(
-            textTitle: "PRFILE",
+            textTitle: "PROFILE",
           ),
           body: Stack(
             children: <Widget>[
@@ -35,7 +35,7 @@ class _ProfilePageFourState extends State<ProfilePageFour> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: ExactAssetImage('general-assets/sofi.jpg'),
+                      image: ExactAssetImage('general-assets/pic.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -71,7 +71,7 @@ class _ProfilePageFourState extends State<ProfilePageFour> {
           child: Column(
             children: <Widget>[
               Text(
-                'Sofiane Bouzid',
+                'Abderrahmen BMZ',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 28,
@@ -91,8 +91,8 @@ class _ProfilePageFourState extends State<ProfilePageFour> {
                 height: 10.0,
               ),
               _divider(context),
-              _info('PHONE NUMBER', '00 - 000 - 000', Icons.phone),
-              _info('EMAIL', 'Sofianebouzid4@gmail.com', Icons.email),
+              _info('PHONE NUMBER', '553 - 66 - 26 - 37', Icons.phone),
+              _info('EMAIL', 'Abderrahmen.bmz@outlook.com', Icons.email),
               _info('ADDRESS', 'Chlef - Algeria', Icons.add_location)
             ],
           ),

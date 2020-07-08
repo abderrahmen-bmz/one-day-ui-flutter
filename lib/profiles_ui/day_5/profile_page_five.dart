@@ -23,7 +23,7 @@ class _ProfilePageFiveState extends State<ProfilePageFive> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: CustomAppBar(
-            textTitle: "Profile",
+            textTitle: "PROFILE",
           ),
           body: Align(
             alignment: Alignment.bottomCenter,

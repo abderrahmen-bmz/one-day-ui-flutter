@@ -15,8 +15,30 @@ class _ProfilePageSixState extends State<ProfilePageSix> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        textTitle: 'PROFILE',
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+          'PROFILE',
+          style: TextStyle(color: Colors.black),
+        ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.arrow_back,
+            color: _textColor,
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.settings,
+              color: _textColor,
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -141,7 +163,7 @@ class _ProfilePageSixState extends State<ProfilePageSix> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               image: DecorationImage(
-                  image: ExactAssetImage('general-assets/pic.jpg'),
+                  image: ExactAssetImage('general-assets/bg01.jpg'),
                   fit: BoxFit.cover),
             ),
           );

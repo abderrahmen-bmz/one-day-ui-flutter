@@ -24,7 +24,7 @@ class _ProfilePageThreeState extends State<ProfilePageThree> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: CustomAppBar(
-            textTitle: 'prfiles',
+            textTitle: 'PROFILE',
           ),
           body: Stack(
             children: <Widget>[
@@ -63,13 +63,13 @@ class _ProfilePageThreeState extends State<ProfilePageThree> {
               textAlign: TextAlign.center,
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 16.0, bottom: 24),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 10),
               child: Text(
-                profile.user.address,
+                'Software Enginner',
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
             ),
